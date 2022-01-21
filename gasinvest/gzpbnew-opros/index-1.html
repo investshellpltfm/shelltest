@@ -1,0 +1,1690 @@
+<!DOCTYPE html>
+<html style="background-color: rgb(255, 255, 255);" class="wf-inter-n4-active wf-inter-n6-active wf-inter-n7-active wf-active">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <meta property="og:image" content="favicon.ico" />
+
+        <link href="./css/app.css" rel="preload" as="style" />
+        <link href="./css/chunk-vendors.css" rel="preload" as="style" />
+        <link href="./css/chunk-vendors.css" rel="stylesheet" />
+        <link href="./css/app.css" rel="stylesheet" />
+        <link href="./css/final-page.css" rel="stylesheet" />
+        <style type="text/css">
+            .vue-slider-dot {
+                position: absolute;
+                will-change: transform;
+                -webkit-transition: all 0s;
+                transition: all 0s;
+                z-index: 5;
+            }
+
+            .vue-slider-dot-tooltip {
+                position: absolute;
+                visibility: hidden;
+            }
+
+            .vue-slider-dot-tooltip-show {
+                visibility: visible;
+            }
+
+            .vue-slider-dot-tooltip-top {
+                top: -10px;
+                left: 50%;
+                -webkit-transform: translate(-50%, -100%);
+                transform: translate(-50%, -100%);
+            }
+
+            .vue-slider-dot-tooltip-bottom {
+                bottom: -10px;
+                left: 50%;
+                -webkit-transform: translate(-50%, 100%);
+                transform: translate(-50%, 100%);
+            }
+
+            .vue-slider-dot-tooltip-left {
+                left: -10px;
+                top: 50%;
+                -webkit-transform: translate(-100%, -50%);
+                transform: translate(-100%, -50%);
+            }
+
+            .vue-slider-dot-tooltip-right {
+                right: -10px;
+                top: 50%;
+                -webkit-transform: translate(100%, -50%);
+                transform: translate(100%, -50%);
+            }
+        </style>
+        <style type="text/css">
+            .vue-slider-marks {
+                position: relative;
+                width: 100%;
+                height: 100%;
+            }
+
+            .vue-slider-mark {
+                position: absolute;
+                z-index: 1;
+            }
+
+            .vue-slider-ltr .vue-slider-mark,
+            .vue-slider-rtl .vue-slider-mark {
+                width: 0;
+                height: 100%;
+                top: 50%;
+            }
+
+            .vue-slider-ltr .vue-slider-mark-step,
+            .vue-slider-rtl .vue-slider-mark-step {
+                top: 0;
+            }
+
+            .vue-slider-ltr .vue-slider-mark-label,
+            .vue-slider-rtl .vue-slider-mark-label {
+                top: 100%;
+                margin-top: 10px;
+            }
+
+            .vue-slider-ltr .vue-slider-mark {
+                -webkit-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+            }
+
+            .vue-slider-ltr .vue-slider-mark-step {
+                left: 0;
+            }
+
+            .vue-slider-ltr .vue-slider-mark-label {
+                left: 50%;
+                -webkit-transform: translateX(-50%);
+                transform: translateX(-50%);
+            }
+
+            .vue-slider-rtl .vue-slider-mark {
+                -webkit-transform: translate(50%, -50%);
+                transform: translate(50%, -50%);
+            }
+
+            .vue-slider-rtl .vue-slider-mark-step {
+                right: 0;
+            }
+
+            .vue-slider-rtl .vue-slider-mark-label {
+                right: 50%;
+                -webkit-transform: translateX(50%);
+                transform: translateX(50%);
+            }
+
+            .vue-slider-btt .vue-slider-mark,
+            .vue-slider-ttb .vue-slider-mark {
+                width: 100%;
+                height: 0;
+                left: 50%;
+            }
+
+            .vue-slider-btt .vue-slider-mark-step,
+            .vue-slider-ttb .vue-slider-mark-step {
+                left: 0;
+            }
+
+            .vue-slider-btt .vue-slider-mark-label,
+            .vue-slider-ttb .vue-slider-mark-label {
+                left: 100%;
+                margin-left: 10px;
+            }
+
+            .vue-slider-btt .vue-slider-mark {
+                -webkit-transform: translate(-50%, 50%);
+                transform: translate(-50%, 50%);
+            }
+
+            .vue-slider-btt .vue-slider-mark-step {
+                top: 0;
+            }
+
+            .vue-slider-btt .vue-slider-mark-label {
+                top: 50%;
+                -webkit-transform: translateY(-50%);
+                transform: translateY(-50%);
+            }
+
+            .vue-slider-ttb .vue-slider-mark {
+                -webkit-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+            }
+
+            .vue-slider-ttb .vue-slider-mark-step {
+                bottom: 0;
+            }
+
+            .vue-slider-ttb .vue-slider-mark-label {
+                bottom: 50%;
+                -webkit-transform: translateY(50%);
+                transform: translateY(50%);
+            }
+
+            .vue-slider-mark-label,
+            .vue-slider-mark-step {
+                position: absolute;
+            }
+        </style>
+        <style type="text/css">
+            .vue-slider {
+                position: relative;
+                -webkit-box-sizing: content-box;
+                box-sizing: content-box;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                display: block;
+                touch-action: none;
+                -ms-touch-action: none;
+                -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            }
+
+            .vue-slider-rail {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                -webkit-transition-property: width, height, left, right, top, bottom;
+                transition-property: width, height, left, right, top, bottom;
+            }
+
+            .vue-slider-process {
+                position: absolute;
+                z-index: 1;
+            }
+
+            .vue-slider-sr-only {
+                clip: rect(1px, 1px, 1px, 1px);
+                height: 1px;
+                width: 1px;
+                overflow: hidden;
+                position: absolute !important;
+            }
+        </style>
+        <title>Пройдите официальный тест от “ГазпромБанк Инвестиции” и получите доступ к платформе!</title>
+        <link href="./css/css_002.css" rel="stylesheet" />
+        <link rel="stylesheet" href="./css/css.css" media="all" />
+        <link type="image/x-icon" rel="shortcut icon" href="./favicon.ico" />
+		</head>
+    <span id="warning-container"><i data-reactroot=""></i></span>
+    <body style="background-color: rgb(255, 255, 255);">
+        <style>
+            .test-step {
+                display: none;
+            }
+
+            .test-step.active {
+                display: block;
+            }
+
+            .app__start-page.test-step.active {
+                display: flex;
+            }
+
+            .d-none {
+                display: none !important;
+            }
+        </style>
+        <div
+            class="app-wrapper light-blue"
+            style="
+                --color: #4290fc;
+                --color-lighten: #4290fc;
+                --color-lighten10: #4290fc;
+                --color-lighten2: #4290fc;
+                --color-darken: #002d75;
+                --color-darken10: #0041a8;
+                --color-alpha: rgba(0, 84, 221, 0.5);
+                --color-alpha2: rgba(0, 84, 221, 0.2);
+                --color-alpha3: rgba(0, 84, 221, 0.05);
+                --color-text: #ffffff;
+                --color-text2: #0054dd;
+                --gradient-main: 331deg, rgb(0, 45, 117), rgb(66, 139, 255);
+                --color-primary-text-button: #fff;
+                --color-bg-sidebar: #f7f7f7;
+                --color-bg-1: #ededed;
+                --color-bg-2: #e6e6e6;
+                --color-bg-3: #cccccc;
+                --color-bg-4: #b3b3b3;
+                --color-bg-5: #999999;
+                --color-bg-6: rgba(0, 0, 0, 0.7);
+                --color-bg-7: #ededed;
+                --color-bg-8: #d9d9d9;
+                --color-bg-9: #363636;
+                --color-bg-text: #000000;
+                --color-bg-quiz: #ffffff;
+                --color-bg-alpha0: rgba(255, 255, 255, 0);
+                --color-bg-alpha2: rgba(0, 0, 0, 0.2);
+                --color-bg-alpha7: rgba(0, 0, 0, 0.7);
+                --color-white-label: #ffffff;
+                --color-bg-sub-text: #a6a6a6;
+                --font: 'Inter';
+            "
+        >
+            <div id="app" class="app">
+                <div class="layout">
+                    <div class="app__start-page test-step active">
+                        <div class="start-page columns is-desktop-modal start-page_has_bg start-page_position_right start-page_mode_start start-page_theme_expanded">
+                            <!--div class="start-page__bg column" style="background-image: url('/images/bg.jpg');"></div-->
+
+                            <div style="min-width: 100%; min-height: 100vh; z-index: 99; position: absolute;"></div>
+
+                            <iframe
+                                id="myVideo"
+                                style="background: #0c6ff6;"
+                                class="start-page__bg"
+                                src="https://www.youtube.com/embed/Hfj0_0rx_p0?rel=0&amp;controls=0&amp;showinfo=0&amp;autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=Hfj0_0rx_p0&amp;modestbranding=1"
+                                title="YouTube video player"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen
+                            ></iframe>
+
+                            <style>
+                                #myVideo {
+                                    position: fixed;
+                                    right: 0;
+                                    bottom: 0;
+                                    min-width: 100%;
+                                    min-height: 100%;
+                                }
+
+                                @media (max-width: 700px) {
+                                    #myVideo {
+                                        position: relative;
+                                        display: block;
+                                        min-width: auto;
+                                        min-height: auto;
+                                    }
+                                }
+
+                                @media (max-width: 818px) {
+                                    .final-page_horizontal {
+                                        display: block;
+                                        padding: 30px 25px;
+                                    }
+                                }
+                            </style>
+
+                            <!----><!---->
+                            <div class="start-page__content column is-5" style="z-index: 100;">
+                                <div class="start-page__body">
+                                    <div class="start-page__line"></div>
+                                    <h1 class="start-page__header">
+                                        Как реализовать свои мечты с “ГазпромБанк Инвестиции”?
+                                    </h1>
+                                    <h2 class="start-page__subheader">Пройдите официальный тест от <strong>“ГазпромБанк Инвестиции”</strong>, чтобы получить доступ к платформе и начать зарабатывать</h2>
+                                    <button class="start-page__button button is-primary is-blicked has-light-shadow next-btn">
+                                        <span class="icon">
+                                            <svg viewBox="0 0 24 24" class="mdi-icon mdi-24px">
+                                                <title>mdi-checkbox-marked-circle-outline</title>
+                                                <path
+                                                    d="M20,12C20,16.42 16.42,20 12,20C7.58,20 4,16.42 4,12C4,7.58 7.58,4 12,4C12.76,4 13.5,4.11 14.2,4.31L15.77,2.74C14.61,2.26 13.34,2 12,2C6.48,2 2,6.48 2,12C2,17.52 6.48,22 12,22C17.52,22 22,17.52 22,12M7.91,10.08L6.5,11.5L11,16L21,6L19.59,4.58L11,13.17L7.91,10.08Z"
+                                                    stroke-width="0"
+                                                    fill-rule="nonzero"
+                                                ></path>
+                                            </svg>
+                                        </span>
+                                        &nbsp; Начать тест
+                                    </button>
+                                    <!---->
+                                </div>
+                            </div>
+                            <div class="start-page__layer"></div>
+                        </div>
+                    </div>
+
+                    <div class="quiz-container test-step">
+                        <div class="quiz">
+                            <div class="quiz__questions">
+                                <div class="quiz__questions-header">
+                                    <div class="title quiz__question-title quiz__question-title_without-title">
+                                        <span class="is-block">Есть ли у Вас список желаний и планов?</span>
+                                        <!---->
+                                    </div>
+                                </div>
+                                <div class="question quiz__question question_variants" id="DJ17A5860g">
+                                    <div class="answer-variants answer-variants_has_image">
+                                        <div class="answer-variants__group">
+                                            <div data-element-index="0" class="answer-variants__variant-text" style="">
+                                                <label tabindex="0" class="b-radio radio">
+                                                    <input tabindex="-1" type="radio" name="step1" value="0" />
+                                                    <span class="check"></span>
+                                                    <span class="control-label">
+                                                        <div class="answer">
+                                                            <div class="answer__title">Да, есть</div>
+                                                        </div>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div data-element-index="0" class="answer-variants__variant-text" style="">
+                                                <label tabindex="0" class="b-radio radio">
+                                                    <input tabindex="-1" type="radio" name="step1" value="1" />
+                                                    <span class="check"></span>
+                                                    <span class="control-label">
+                                                        <div class="answer">
+                                                            <div class="answer__title">Нет</div>
+                                                        </div>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <div class="answer-variants__image">
+                                            <img src="./img/pic1.jpg" alt="" class="answer-variants__image-img" />
+                                        </div>
+                                    </div>
+                                    <!----><!----><!----><!----><!----><!----><!----><!----><!---->
+                                </div>
+                                <div class="quiz__whitelabel quiz__whitelabel_mobile" style="display: block !important; visibility: visible !important; opacity: 1 !important;"></div>
+                                <div class="quiz__buttons">
+                                    <div class="quiz-buttons is-outline">
+                                        <div class="quiz-buttons__progress">
+                                            <div class="progress-bar">
+                                                <div class="progress-bar-circular-steps">
+                                                    <div class="progress-bar-circular-steps__label">Шаг 0 из 9</div>
+                                                    <div class="progress-bar-circular-steps__gradient-wrapp" style="--left-percent: 0%; --right-percent: 50%;">
+                                                        <div class="progress-bar-circular-steps__steps" style="left: 0px;">
+                                                            <div class="progress-bar-circular-steps__step progress-bar-circular-steps__step_active"></div>
+                                                            <div class="progress-bar-circular-steps__step"></div>
+                                                            <div class="progress-bar-circular-steps__step"></div>
+                                                            <div class="progress-bar-circular-steps__step"></div>
+                                                            <div class="progress-bar-circular-steps__step"></div>
+                                                            <div class="progress-bar-circular-steps__step"></div>
+                                                            <div class="progress-bar-circular-steps__step"></div>
+                                                            <div class="progress-bar-circular-steps__step"></div>
+                                                            <div class="progress-bar-circular-steps__step"></div>
+                                                            <div class="progress-bar-circular-steps__step"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <button disabled="disabled" class="button is-link quiz-buttons__button quiz-buttons__button_prev is-outline d-none">
+                                            <span class="icon">
+                                                <svg viewBox="0 0 24 24" class="mdi-icon mdi-24px">
+                                                    <title>mdi-arrow-left</title>
+                                                    <path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" stroke-width="0" fill-rule="nonzero"></path>
+                                                </svg>
+                                            </span>
+                                        </button>
+                                        <button class="button quiz-buttons__button quiz-buttons__button_next is-outline next-btn d-none">
+                                            <span class="quiz-buttons__button_next-text">Далее</span>
+                                            <span class="icon quiz-buttons__next-icon">
+                                                <svg viewBox="0 0 24 24" class="mdi-icon mdi-24px">
+                                                    <title>mdi-arrow-right</title>
+                                                    <path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" stroke-width="0" fill-rule="nonzero"></path>
+                                                </svg>
+                                            </span>
+                                        </button>
+                                        <!---->
+                                    </div>
+                                    <!---->
+                                </div>
+                                <!---->
+                            </div>
+                            <!---->
+                            <div class="quiz__whitelabel_fixed-bottom">
+                                <div data-v-44fad548="" class="whitelabel" style="display: block !important; visibility: visible !important; opacity: 1 !important;">
+                                    <div data-v-44fad548="" class="whitelabel__container">
+                                        <div data-v-44fad548="" class="whitelabel__icon-bg">
+                                            <img
+                                                data-v-44fad548=""
+                                                src="data:image/png;base64,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"
+                                                class="whitelabel__icon"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!----><!---->
+                    </div>
+                    <div class="quiz-container test-step">
+                        <div class="quiz">
+                            <div class="quiz__questions">
+                                <div class="quiz__questions-header">
+                                    <div class="title quiz__question-title quiz__question-title_without-title">
+                                        <span class="is-block">Слышали ли вы что проект “ГазпромБанк Инвестиции” даёт возможности выхода на европейские высокодоходные активы?</span>
+                                        <!---->
+                                    </div>
+                                </div>
+                                <div class="question quiz__question question_variants" id="DJ17A5860g">
+                                    <div class="answer-variants answer-variants_has_image">
+                                        <div class="answer-variants__group">
+                                            <div data-element-index="0" class="answer-variants__variant-text" style="">
+                                                <label tabindex="0" class="b-radio radio">
+                                                    <input tabindex="-1" type="radio" name="step2" value="0" />
+                                                    <span class="check"></span>
+                                                    <span class="control-label">
+                                                        <div class="answer">
+                                                            <div class="answer__title">Да, знаю</div>
+                                                        </div>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div data-element-index="0" class="answer-variants__variant-text" style="">
+                                                <label tabindex="0" class="b-radio radio">
+                                                    <input tabindex="-1" type="radio" name="step2" value="1" />
+                                                    <span class="check"></span>
+                                                    <span class="control-label">
+                                                        <div class="answer">
+                                                            <div class="answer__title">Нет, не слышал. Но хотелось бы узнать подробнее</div>
+                                                        </div>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <div class="answer-variants__image">
+                                            <img src="./img/pic2.jpg" alt="" class="answer-variants__image-img" />
+                                        </div>
+                                    </div>
+                                    <!----><!----><!----><!----><!----><!----><!----><!----><!---->
+                                </div>
+                                <div class="quiz__whitelabel quiz__whitelabel_mobile" style="display: block !important; visibility: visible !important; opacity: 1 !important;"></div>
+                                <div class="quiz__buttons">
+                                    <div class="quiz-buttons is-outline">
+                                        <div class="quiz-buttons__progress">
+                                            <div class="progress-bar">
+                                                <div class="progress-bar-circular-steps">
+                                                    <div class="progress-bar-circular-steps__label">Шаг 1 из 9</div>
+                                                    <div class="progress-bar-circular-steps__gradient-wrapp" style="--left-percent: 0%; --right-percent: 50%;">
+                                                        <div class="progress-bar-circular-steps__steps" style="left: 0px;">
+                                                            <div class="progress-bar-circular-steps__step progress-bar-circular-steps__step_active"></div>
+                                                            <div class="progress-bar-circular-steps__step progress-bar-circular-steps__step_active"></div>
+                                                            <div class="progress-bar-circular-steps__step"></div>
+                                                            <div class="progress-bar-circular-steps__step"></div>
+                                                            <div class="progress-bar-circular-steps__step"></div>
+                                                            <div class="progress-bar-circular-steps__step"></div>
+                                                            <div class="progress-bar-circular-steps__step"></div>
+                                                            <div class="progress-bar-circular-steps__step"></div>
+                                                            <div class="progress-bar-circular-steps__step"></div>
+                                                            <div class="progress-bar-circular-steps__step"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <button disabled="disabled" class="button is-link quiz-buttons__button quiz-buttons__button_prev is-outline d-none">
+                                            <span class="icon">
+                                                <svg viewBox="0 0 24 24" class="mdi-icon mdi-24px">
+                                                    <title>mdi-arrow-left</title>
+                                                    <path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" stroke-width="0" fill-rule="nonzero"></path>
+                                                </svg>
+                                            </span>
+                                        </button>
+                                        <button class="button quiz-buttons__button quiz-buttons__button_next is-outline next-btn d-none">
+                                            <span class="quiz-buttons__button_next-text">Далее</span>
+                                            <span class="icon quiz-buttons__next-icon">
+                                                <svg viewBox="0 0 24 24" class="mdi-icon mdi-24px">
+                                                    <title>mdi-arrow-right</title>
+                                                    <path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" stroke-width="0" fill-rule="nonzero"></path>
+                                                </svg>
+                                            </span>
+                                        </button>
+                                        <!---->
+                                    </div>
+                                    <!---->
+                                </div>
+                                <!---->
+                            </div>
+                            <!---->
+                            <div class="quiz__whitelabel_fixed-bottom">
+                                <div data-v-44fad548="" class="whitelabel" style="display: block !important; visibility: visible !important; opacity: 1 !important;">
+                                    <div data-v-44fad548="" class="whitelabel__container">
+                                        <div data-v-44fad548="" class="whitelabel__icon-bg">
+                                            <img
+                                                data-v-44fad548=""
+                                                src="data:image/png;base64,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"
+                                                class="whitelabel__icon"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!----><!---->
+                    </div>
+                    <div class="quiz-container test-step">
+                        <div class="quiz">
+                            <div class="quiz__questions">
+                                <div class="quiz__questions-header">
+                                    <div class="title quiz__question-title quiz__question-title_without-title">
+                                        <span class="is-block">Какой суммы в месяц Вам бы было достаточно для исполнения своих желаний?</span>
+                                        <!---->
+                                    </div>
+                                </div>
+                                <div class="question quiz__question question_variants" id="DJ17A5860g">
+                                    <div class="answer-variants answer-variants_has_image">
+                                        <div class="answer-variants__group">
+                                            <div data-element-index="0" class="answer-variants__variant-text" style="">
+                                                <label tabindex="0" class="b-radio radio">
+                                                    <input tabindex="-1" type="radio" name="step3" value="0" />
+                                                    <span class="check"></span>
+                                                    <span class="control-label">
+                                                        <div class="answer">
+                                                            <div class="answer__title">75 000 руб</div>
+                                                        </div>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div data-element-index="0" class="answer-variants__variant-text" style="">
+                                                <label tabindex="0" class="b-radio radio">
+                                                    <input tabindex="-1" type="radio" name="step3" value="1" />
+                                                    <span class="check"></span>
+                                                    <span class="control-label">
+                                                        <div class="answer">
+                                                            <div class="answer__title">150 000 руб</div>
+                                                        </div>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div data-element-index="0" class="answer-variants__variant-text" style="">
+                                                <label tabindex="0" class="b-radio radio">
+                                                    <input tabindex="-1" type="radio" name="step3" value="2" />
+                                                    <span class="check"></span>
+                                                    <span class="control-label">
+                                                        <div class="answer">
+                                                            <div class="answer__title">300 000 руб</div>
+                                                        </div>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div data-element-index="0" class="answer-variants__variant-text" style="">
+                                                <label tabindex="0" class="b-radio radio">
+                                                    <input tabindex="-1" type="radio" name="step3" value="3" />
+                                                    <span class="check"></span>
+                                                    <span class="control-label">
+                                                        <div class="answer">
+                                                            <div class="answer__title">Больше 500 000</div>
+                                                        </div>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div data-element-index="0" class="answer-variants__variant-text" style="">
+                                                <label tabindex="0" class="b-radio radio">
+                                                    <input tabindex="-1" type="radio" name="step3" value="4" />
+                                                    <span class="check"></span>
+                                                    <span class="control-label">
+                                                        <div class="answer">
+                                                            <div class="answer__title">Другая сумма</div>
+                                                        </div>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <div class="answer-variants__image">
+                                            <img src="/img/pic3.jpg" alt="" class="answer-variants__image-img" />
+                                        </div>
+                                    </div>
+                                    <!----><!----><!----><!----><!----><!----><!----><!----><!---->
+                                </div>
+                                <div class="quiz__whitelabel quiz__whitelabel_mobile" style="display: block !important; visibility: visible !important; opacity: 1 !important;"></div>
+                                <div class="quiz__buttons">
+                                    <div class="quiz-buttons is-outline">
+                                        <div class="quiz-buttons__progress">
+                                            <div class="progress-bar">
+                                                <div class="progress-bar-circular-steps">
+                                                    <div class="progress-bar-circular-steps__label">Шаг 2 из 9</div>
+                                                    <div class="progress-bar-circular-steps__gradient-wrapp" style="--left-percent: 0%; --right-percent: 50%;">
+                                                        <div class="progress-bar-circular-steps__steps" style="left: 0px;">
+                                                            <div class="progress-bar-circular-steps__step progress-bar-circular-steps__step_active"></div>
+                                                            <div class="progress-bar-circular-steps__step progress-bar-circular-steps__step_active"></div>
+                                                            <div class="progress-bar-circular-steps__step progress-bar-circular-steps__step_active"></div>
+                                                            <div class="progress-bar-circular-steps__step"></div>
+                                                            <div class="progress-bar-circular-steps__step"></div>
+                                                            <div class="progress-bar-circular-steps__step"></div>
+                                                            <div class="progress-bar-circular-steps__step"></div>
+                                                            <div class="progress-bar-circular-steps__step"></div>
+                                                            <div class="progress-bar-circular-steps__step"></div>
+                                                            <div class="progress-bar-circular-steps__step"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <button disabled="disabled" class="button is-link quiz-buttons__button quiz-buttons__button_prev is-outline d-none">
+                                            <span class="icon">
+                                                <svg viewBox="0 0 24 24" class="mdi-icon mdi-24px">
+                                                    <title>mdi-arrow-left</title>
+                                                    <path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" stroke-width="0" fill-rule="nonzero"></path>
+                                                </svg>
+                                            </span>
+                                        </button>
+                                        <button class="button quiz-buttons__button quiz-buttons__button_next is-outline next-btn d-none">
+                                            <span class="quiz-buttons__button_next-text">Далее</span>
+                                            <span class="icon quiz-buttons__next-icon">
+                                                <svg viewBox="0 0 24 24" class="mdi-icon mdi-24px">
+                                                    <title>mdi-arrow-right</title>
+                                                    <path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" stroke-width="0" fill-rule="nonzero"></path>
+                                                </svg>
+                                            </span>
+                                        </button>
+                                        <!---->
+                                    </div>
+                                    <!---->
+                                </div>
+                                <!---->
+                            </div>
+                            <!---->
+                            <div class="quiz__whitelabel_fixed-bottom">
+                                <div data-v-44fad548="" class="whitelabel" style="display: block !important; visibility: visible !important; opacity: 1 !important;">
+                                    <div data-v-44fad548="" class="whitelabel__container">
+                                        <div data-v-44fad548="" class="whitelabel__icon-bg">
+                                            <img
+                                                data-v-44fad548=""
+                                                src="data:image/png;base64,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"
+                                                class="whitelabel__icon"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!----><!---->
+                    </div>
+                    <div class="quiz-container test-step">
+                        <div class="quiz">
+                            <div class="quiz__questions">
+                                <div class="quiz__questions-header">
+                                    <div class="title quiz__question-title quiz__question-title_without-title">
+                                        <span class="is-block">Куда бы Вы потратили заработанные деньги?</span>
+                                        <!---->
+                                    </div>
+                                </div>
+                                <div class="question quiz__question question_variants" id="DJ17A5860g">
+                                    <div class="answer-variants answer-variants_has_image">
+                                        <div class="answer-variants__group">
+                                            <div data-element-index="0" class="answer-variants__variant-text" style="">
+                                                <label tabindex="0" class="b-radio radio">
+                                                    <input tabindex="-1" type="radio" name="step4" value="0" />
+                                                    <span class="check"></span>
+                                                    <span class="control-label">
+                                                        <div class="answer">
+                                                            <div class="answer__title">Выплатил бы кредит/ипотеку</div>
+                                                        </div>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div data-element-index="0" class="answer-variants__variant-text" style="">
+                                                <label tabindex="0" class="b-radio radio">
+                                                    <input tabindex="-1" type="radio" name="step4" value="1" />
+                                                    <span class="check"></span>
+                                                    <span class="control-label">
+                                                        <div class="answer">
+                                                            <div class="answer__title">Помог(ла) бы родным</div>
+                                                        </div>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div data-element-index="0" class="answer-variants__variant-text" style="">
+                                                <label tabindex="0" class="b-radio radio">
+                                                    <input tabindex="-1" type="radio" name="step4" value="2" />
+                                                    <span class="check"></span>
+                                                    <span class="control-label">
+                                                        <div class="answer">
+                                                            <div class="answer__title">Инвестировал бы, чтобы получить больше</div>
+                                                        </div>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <div class="answer-variants__image">
+                                            <img src="./img/pic4.jpg" alt="" class="answer-variants__image-img" />
+                                        </div>
+                                    </div>
+                                    <!----><!----><!----><!----><!----><!----><!----><!----><!---->
+                                </div>
+                                <div class="quiz__whitelabel quiz__whitelabel_mobile" style="display: block !important; visibility: visible !important; opacity: 1 !important;"></div>
+                                <div class="quiz__buttons">
+                                    <div class="quiz-buttons is-outline">
+                                        <div class="quiz-buttons__progress">
+                                            <div class="progress-bar">
+                                                <div class="progress-bar-circular-steps">
+                                                    <div class="progress-bar-circular-steps__label">Шаг 3 из 9</div>
+                                                    <div class="progress-bar-circular-steps__gradient-wrapp" style="--left-percent: 0%; --right-percent: 50%;">
+                                                        <div class="progress-bar-circular-steps__steps" style="left: 0px;">
+                                                            <div class="progress-bar-circular-steps__step progress-bar-circular-steps__step_active"></div>
+                                                            <div class="progress-bar-circular-steps__step progress-bar-circular-steps__step_active"></div>
+                                                            <div class="progress-bar-circular-steps__step progress-bar-circular-steps__step_active"></div>
+                                                            <div class="progress-bar-circular-steps__step progress-bar-circular-steps__step_active"></div>
+                                                            <div class="progress-bar-circular-steps__step"></div>
+                                                            <div class="progress-bar-circular-steps__step"></div>
+                                                            <div class="progress-bar-circular-steps__step"></div>
+                                                            <div class="progress-bar-circular-steps__step"></div>
+                                                            <div class="progress-bar-circular-steps__step"></div>
+                                                            <div class="progress-bar-circular-steps__step"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <button disabled="disabled" class="button is-link quiz-buttons__button quiz-buttons__button_prev is-outline d-none">
+                                            <span class="icon">
+                                                <svg viewBox="0 0 24 24" class="mdi-icon mdi-24px">
+                                                    <title>mdi-arrow-left</title>
+                                                    <path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" stroke-width="0" fill-rule="nonzero"></path>
+                                                </svg>
+                                            </span>
+                                        </button>
+                                        <button class="button quiz-buttons__button quiz-buttons__button_next is-outline next-btn d-none">
+                                            <span class="quiz-buttons__button_next-text">Далее</span>
+                                            <span class="icon quiz-buttons__next-icon">
+                                                <svg viewBox="0 0 24 24" class="mdi-icon mdi-24px">
+                                                    <title>mdi-arrow-right</title>
+                                                    <path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" stroke-width="0" fill-rule="nonzero"></path>
+                                                </svg>
+                                            </span>
+                                        </button>
+                                        <!---->
+                                    </div>
+                                    <!---->
+                                </div>
+                                <!---->
+                            </div>
+                            <!---->
+                            <div class="quiz__whitelabel_fixed-bottom">
+                                <div data-v-44fad548="" class="whitelabel" style="display: block !important; visibility: visible !important; opacity: 1 !important;">
+                                    <div data-v-44fad548="" class="whitelabel__container">
+                                        <div data-v-44fad548="" class="whitelabel__icon-bg">
+                                            <img
+                                                data-v-44fad548=""
+                                                src="data:image/png;base64,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"
+                                                class="whitelabel__icon"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!----><!---->
+                    </div>
+                    <div class="quiz-container test-step">
+                        <div class="quiz">
+                            <div class="quiz__questions">
+                                <div class="quiz__questions-header">
+                                    <div class="title quiz__question-title quiz__question-title_without-title">
+                                        <span class="is-block">Имеете ли Вы опыт в инвестировании?</span>
+                                        <!---->
+                                    </div>
+                                </div>
+                                <div class="question quiz__question question_variants" id="DJ17A5860g">
+                                    <div class="answer-variants answer-variants_has_image">
+                                        <div class="answer-variants__group">
+                                            <div data-element-index="0" class="answer-variants__variant-text" style="">
+                                                <label tabindex="0" class="b-radio radio">
+                                                    <input tabindex="-1" type="radio" name="step5" value="0" />
+                                                    <span class="check"></span>
+                                                    <span class="control-label">
+                                                        <div class="answer">
+                                                            <div class="answer__title">Нет, но хотел бы узнать подробнее</div>
+                                                        </div>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div data-element-index="0" class="answer-variants__variant-text" style="">
+                                                <label tabindex="0" class="b-radio radio">
+                                                    <input tabindex="-1" type="radio" name="step5" value="1" />
+                                                    <span class="check"></span>
+                                                    <span class="control-label">
+                                                        <div class="answer">
+                                                            <div class="answer__title">Да, удачный</div>
+                                                        </div>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div data-element-index="0" class="answer-variants__variant-text" style="">
+                                                <label tabindex="0" class="b-radio radio">
+                                                    <input tabindex="-1" type="radio" name="step5" value="2" />
+                                                    <span class="check"></span>
+                                                    <span class="control-label">
+                                                        <div class="answer">
+                                                            <div class="answer__title">Да, был неудачный</div>
+                                                        </div>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <div class="answer-variants__image">
+                                            <img src="./img/pic5.jpg" alt="" class="answer-variants__image-img" />
+                                        </div>
+                                    </div>
+                                    <!----><!----><!----><!----><!----><!----><!----><!----><!---->
+                                </div>
+                                <div class="quiz__whitelabel quiz__whitelabel_mobile" style="display: block !important; visibility: visible !important; opacity: 1 !important;"></div>
+                                <div class="quiz__buttons">
+                                    <div class="quiz-buttons is-outline">
+                                        <div class="quiz-buttons__progress">
+                                            <div class="progress-bar">
+                                                <div class="progress-bar-circular-steps">
+                                                    <div class="progress-bar-circular-steps__label">Шаг 4 из 9</div>
+                                                    <div class="progress-bar-circular-steps__gradient-wrapp" style="--left-percent: 0%; --right-percent: 50%;">
+                                                        <div class="progress-bar-circular-steps__steps" style="left: 0px;">
+                                                            <div class="progress-bar-circular-steps__step progress-bar-circular-steps__step_active"></div>
+                                                            <div class="progress-bar-circular-steps__step progress-bar-circular-steps__step_active"></div>
+                                                            <div class="progress-bar-circular-steps__step progress-bar-circular-steps__step_active"></div>
+                                                            <div class="progress-bar-circular-steps__step progress-bar-circular-steps__step_active"></div>
+                                                            <div class="progress-bar-circular-steps__step progress-bar-circular-steps__step_active"></div>
+                                                            <div class="progress-bar-circular-steps__step"></div>
+                                                            <div class="progress-bar-circular-steps__step"></div>
+                                                            <div class="progress-bar-circular-steps__step"></div>
+                                                            <div class="progress-bar-circular-steps__step"></div>
+                                                            <div class="progress-bar-circular-steps__step"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <button disabled="disabled" class="button is-link quiz-buttons__button quiz-buttons__button_prev is-outline d-none">
+                                            <span class="icon">
+                                                <svg viewBox="0 0 24 24" class="mdi-icon mdi-24px">
+                                                    <title>mdi-arrow-left</title>
+                                                    <path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" stroke-width="0" fill-rule="nonzero"></path>
+                                                </svg>
+                                            </span>
+                                        </button>
+                                        <button class="button quiz-buttons__button quiz-buttons__button_next is-outline next-btn d-none">
+                                            <span class="quiz-buttons__button_next-text">Далее</span>
+                                            <span class="icon quiz-buttons__next-icon">
+                                                <svg viewBox="0 0 24 24" class="mdi-icon mdi-24px">
+                                                    <title>mdi-arrow-right</title>
+                                                    <path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" stroke-width="0" fill-rule="nonzero"></path>
+                                                </svg>
+                                            </span>
+                                        </button>
+                                        <!---->
+                                    </div>
+                                    <!---->
+                                </div>
+                                <!---->
+                            </div>
+                            <!---->
+                            <div class="quiz__whitelabel_fixed-bottom">
+                                <div data-v-44fad548="" class="whitelabel" style="display: block !important; visibility: visible !important; opacity: 1 !important;">
+                                    <div data-v-44fad548="" class="whitelabel__container">
+                                        <div data-v-44fad548="" class="whitelabel__icon-bg">
+                                            <img
+                                                data-v-44fad548=""
+                                                src="data:image/png;base64,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"
+                                                class="whitelabel__icon"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!----><!---->
+                    </div>
+                    <div class="quiz-container test-step">
+                        <div class="quiz">
+                            <div class="quiz__questions">
+                                <div class="quiz__questions-header">
+                                    <div class="title quiz__question-title quiz__question-title_without-title">
+                                        <span class="is-block">Инвестируя, Вы формируете свой инвестиционный портфель. Акции каких компаний Вас больше интересуют?</span>
+                                        <!---->
+                                    </div>
+                                </div>
+                                <div class="question quiz__question question_variants" id="DJ17A5860g">
+                                    <div class="answer-variants answer-variants_has_image">
+                                        <div class="answer-variants__group">
+                                            <div data-element-index="0" class="answer-variants__variant-text" style="">
+                                                <label tabindex="0" class="b-radio radio">
+                                                    <input tabindex="-1" type="radio" name="step6" value="0" />
+                                                    <span class="check"></span>
+                                                    <span class="control-label">
+                                                        <div class="answer">
+                                                            <div class="answer__title">Международных</div>
+                                                        </div>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div data-element-index="0" class="answer-variants__variant-text" style="">
+                                                <label tabindex="0" class="b-radio radio">
+                                                    <input tabindex="-1" type="radio" name="step6" value="1" />
+                                                    <span class="check"></span>
+                                                    <span class="control-label">
+                                                        <div class="answer">
+                                                            <div class="answer__title">Российских</div>
+                                                        </div>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div data-element-index="0" class="answer-variants__variant-text" style="">
+                                                <label tabindex="0" class="b-radio radio">
+                                                    <input tabindex="-1" type="radio" name="step6" value="2" />
+                                                    <span class="check"></span>
+                                                    <span class="control-label">
+                                                        <div class="answer">
+                                                            <div class="answer__title">Смешанных</div>
+                                                        </div>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <div class="answer-variants__image">
+                                            <img src="./img/pic6.jpg" alt="" class="answer-variants__image-img" />
+                                        </div>
+                                    </div>
+                                    <!----><!----><!----><!----><!----><!----><!----><!----><!---->
+                                </div>
+                                <div class="quiz__whitelabel quiz__whitelabel_mobile" style="display: block !important; visibility: visible !important; opacity: 1 !important;"></div>
+                                <div class="quiz__buttons">
+                                    <div class="quiz-buttons is-outline">
+                                        <div class="quiz-buttons__progress">
+                                            <div class="progress-bar">
+                                                <div class="progress-bar-circular-steps">
+                                                    <div class="progress-bar-circular-steps__label">Шаг 5 из 9</div>
+                                                    <div class="progress-bar-circular-steps__gradient-wrapp" style="--left-percent: 0%; --right-percent: 50%;">
+                                                        <div class="progress-bar-circular-steps__steps" style="left: 0px;">
+                                                            <div class="progress-bar-circular-steps__step progress-bar-circular-steps__step_active"></div>
+                                                            <div class="progress-bar-circular-steps__step progress-bar-circular-steps__step_active"></div>
+                                                            <div class="progress-bar-circular-steps__step progress-bar-circular-steps__step_active"></div>
+                                                            <div class="progress-bar-circular-steps__step progress-bar-circular-steps__step_active"></div>
+                                                            <div class="progress-bar-circular-steps__step progress-bar-circular-steps__step_active"></div>
+                                                            <div class="progress-bar-circular-steps__step progress-bar-circular-steps__step_active"></div>
+                                                            <div class="progress-bar-circular-steps__step"></div>
+                                                            <div class="progress-bar-circular-steps__step"></div>
+                                                            <div class="progress-bar-circular-steps__step"></div>
+                                                            <div class="progress-bar-circular-steps__step"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <button disabled="disabled" class="button is-link quiz-buttons__button quiz-buttons__button_prev is-outline d-none">
+                                            <span class="icon">
+                                                <svg viewBox="0 0 24 24" class="mdi-icon mdi-24px">
+                                                    <title>mdi-arrow-left</title>
+                                                    <path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" stroke-width="0" fill-rule="nonzero"></path>
+                                                </svg>
+                                            </span>
+                                        </button>
+                                        <button class="button quiz-buttons__button quiz-buttons__button_next is-outline next-btn d-none">
+                                            <span class="quiz-buttons__button_next-text">Далее</span>
+                                            <span class="icon quiz-buttons__next-icon">
+                                                <svg viewBox="0 0 24 24" class="mdi-icon mdi-24px">
+                                                    <title>mdi-arrow-right</title>
+                                                    <path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" stroke-width="0" fill-rule="nonzero"></path>
+                                                </svg>
+                                            </span>
+                                        </button>
+                                        <!---->
+                                    </div>
+                                    <!---->
+                                </div>
+                                <!---->
+                            </div>
+                            <!---->
+                            <div class="quiz__whitelabel_fixed-bottom">
+                                <div data-v-44fad548="" class="whitelabel" style="display: block !important; visibility: visible !important; opacity: 1 !important;">
+                                    <div data-v-44fad548="" class="whitelabel__container">
+                                        <div data-v-44fad548="" class="whitelabel__icon-bg">
+                                            <img
+                                                data-v-44fad548=""
+                                                src="data:image/png;base64,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"
+                                                class="whitelabel__icon"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!----><!---->
+                    </div>
+                    <div class="quiz-container test-step">
+                        <div class="quiz">
+                            <div class="quiz__questions">
+                                <div class="quiz__questions-header">
+                                    <div class="title quiz__question-title quiz__question-title_without-title">
+                                        <span class="is-block">Согласно статистике, успех участников на 87.3% выше, при работе с наставником. Зная эту информацию, как Вы бы хотели работать?</span>
+                                        <!---->
+                                    </div>
+                                </div>
+                                <div class="question quiz__question question_variants" id="DJ17A5860g">
+                                    <div class="answer-variants answer-variants_has_image">
+                                        <div class="answer-variants__group">
+                                            <div data-element-index="0" class="answer-variants__variant-text" style="">
+                                                <label tabindex="0" class="b-radio radio">
+                                                    <input tabindex="-1" type="radio" name="step6" value="0" />
+                                                    <span class="check"></span>
+                                                    <span class="control-label">
+                                                        <div class="answer">
+                                                            <div class="answer__title">С помощью опытного наставника</div>
+                                                        </div>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div data-element-index="0" class="answer-variants__variant-text" style="">
+                                                <label tabindex="0" class="b-radio radio">
+                                                    <input tabindex="-1" type="radio" name="step6" value="1" />
+                                                    <span class="check"></span>
+                                                    <span class="control-label">
+                                                        <div class="answer">
+                                                            <div class="answer__title">Самостоятельно</div>
+                                                        </div>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <div class="answer-variants__image">
+                                            <img src="./img/pic7.jpg" alt="" class="answer-variants__image-img" />
+                                        </div>
+                                    </div>
+                                    <!----><!----><!----><!----><!----><!----><!----><!----><!---->
+                                </div>
+                                <div class="quiz__whitelabel quiz__whitelabel_mobile" style="display: block !important; visibility: visible !important; opacity: 1 !important;"></div>
+                                <div class="quiz__buttons">
+                                    <div class="quiz-buttons is-outline">
+                                        <div class="quiz-buttons__progress">
+                                            <div class="progress-bar">
+                                                <div class="progress-bar-circular-steps">
+                                                    <div class="progress-bar-circular-steps__label">Шаг 6 из 9</div>
+                                                    <div class="progress-bar-circular-steps__gradient-wrapp" style="--left-percent: 0%; --right-percent: 50%;">
+                                                        <div class="progress-bar-circular-steps__steps" style="left: 0px;">
+                                                            <div class="progress-bar-circular-steps__step progress-bar-circular-steps__step_active"></div>
+                                                            <div class="progress-bar-circular-steps__step progress-bar-circular-steps__step_active"></div>
+                                                            <div class="progress-bar-circular-steps__step progress-bar-circular-steps__step_active"></div>
+                                                            <div class="progress-bar-circular-steps__step progress-bar-circular-steps__step_active"></div>
+                                                            <div class="progress-bar-circular-steps__step progress-bar-circular-steps__step_active"></div>
+                                                            <div class="progress-bar-circular-steps__step progress-bar-circular-steps__step_active"></div>
+                                                            <div class="progress-bar-circular-steps__step progress-bar-circular-steps__step_active"></div>
+                                                            <div class="progress-bar-circular-steps__step"></div>
+                                                            <div class="progress-bar-circular-steps__step"></div>
+                                                            <div class="progress-bar-circular-steps__step"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <button disabled="disabled" class="button is-link quiz-buttons__button quiz-buttons__button_prev is-outline d-none">
+                                            <span class="icon">
+                                                <svg viewBox="0 0 24 24" class="mdi-icon mdi-24px">
+                                                    <title>mdi-arrow-left</title>
+                                                    <path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" stroke-width="0" fill-rule="nonzero"></path>
+                                                </svg>
+                                            </span>
+                                        </button>
+                                        <button class="button quiz-buttons__button quiz-buttons__button_next is-outline next-btn d-none">
+                                            <span class="quiz-buttons__button_next-text">Далее</span>
+                                            <span class="icon quiz-buttons__next-icon">
+                                                <svg viewBox="0 0 24 24" class="mdi-icon mdi-24px">
+                                                    <title>mdi-arrow-right</title>
+                                                    <path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" stroke-width="0" fill-rule="nonzero"></path>
+                                                </svg>
+                                            </span>
+                                        </button>
+                                        <!---->
+                                    </div>
+                                    <!---->
+                                </div>
+                                <!---->
+                            </div>
+                            <!---->
+                            <div class="quiz__whitelabel_fixed-bottom">
+                                <div data-v-44fad548="" class="whitelabel" style="display: block !important; visibility: visible !important; opacity: 1 !important;">
+                                    <div data-v-44fad548="" class="whitelabel__container">
+                                        <div data-v-44fad548="" class="whitelabel__icon-bg">
+                                            <img
+                                                data-v-44fad548=""
+                                                src="data:image/png;base64,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"
+                                                class="whitelabel__icon"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!----><!---->
+                    </div>
+                    <div class="quiz-container test-step">
+                        <div class="quiz">
+                            <div class="quiz__questions">
+                                <div class="quiz__questions-header">
+                                    <div class="title quiz__question-title quiz__question-title_without-title">
+                                        <span class="is-block">Есть ли у Вас финансовые обязательства?</span>
+                                        <!---->
+                                    </div>
+                                </div>
+                                <div class="question quiz__question question_variants" id="DJ17A5860g">
+                                    <div class="answer-variants answer-variants_has_image">
+                                        <div class="answer-variants__group">
+                                            <div data-element-index="0" class="answer-variants__variant-text" style="">
+                                                <label tabindex="0" class="b-radio radio">
+                                                    <input tabindex="-1" type="radio" name="step7" value="0" />
+                                                    <span class="check"></span>
+                                                    <span class="control-label">
+                                                        <div class="answer">
+                                                            <div class="answer__title">Да, есть ипотека</div>
+                                                        </div>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div data-element-index="0" class="answer-variants__variant-text" style="">
+                                                <label tabindex="0" class="b-radio radio">
+                                                    <input tabindex="-1" type="radio" name="step7" value="1" />
+                                                    <span class="check"></span>
+                                                    <span class="control-label">
+                                                        <div class="answer">
+                                                            <div class="answer__title">Да, есть кредит</div>
+                                                        </div>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div data-element-index="0" class="answer-variants__variant-text" style="">
+                                                <label tabindex="0" class="b-radio radio">
+                                                    <input tabindex="-1" type="radio" name="step7" value="2" />
+                                                    <span class="check"></span>
+                                                    <span class="control-label">
+                                                        <div class="answer">
+                                                            <div class="answer__title">Нет, только бытовые траты</div>
+                                                        </div>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div data-element-index="0" class="answer-variants__variant-text" style="">
+                                                <label tabindex="0" class="b-radio radio">
+                                                    <input tabindex="-1" type="radio" name="step7" value="3" />
+                                                    <span class="check"></span>
+                                                    <span class="control-label">
+                                                        <div class="answer">
+                                                            <div class="answer__title">Нет, но я хочу быть финансово независимым</div>
+                                                        </div>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <div class="answer-variants__image">
+                                            <img src="/img/pic8.jpg" alt="" class="answer-variants__image-img" />
+                                        </div>
+                                    </div>
+                                    <!----><!----><!----><!----><!----><!----><!----><!----><!---->
+                                </div>
+                                <div class="quiz__whitelabel quiz__whitelabel_mobile" style="display: block !important; visibility: visible !important; opacity: 1 !important;"></div>
+                                <div class="quiz__buttons">
+                                    <div class="quiz-buttons is-outline">
+                                        <div class="quiz-buttons__progress">
+                                            <div class="progress-bar">
+                                                <div class="progress-bar-circular-steps">
+                                                    <div class="progress-bar-circular-steps__label">Шаг 7 из 9</div>
+                                                    <div class="progress-bar-circular-steps__gradient-wrapp" style="--left-percent: 0%; --right-percent: 50%;">
+                                                        <div class="progress-bar-circular-steps__steps" style="left: 0px;">
+                                                            <div class="progress-bar-circular-steps__step progress-bar-circular-steps__step_active"></div>
+                                                            <div class="progress-bar-circular-steps__step progress-bar-circular-steps__step_active"></div>
+                                                            <div class="progress-bar-circular-steps__step progress-bar-circular-steps__step_active"></div>
+                                                            <div class="progress-bar-circular-steps__step progress-bar-circular-steps__step_active"></div>
+                                                            <div class="progress-bar-circular-steps__step progress-bar-circular-steps__step_active"></div>
+                                                            <div class="progress-bar-circular-steps__step progress-bar-circular-steps__step_active"></div>
+                                                            <div class="progress-bar-circular-steps__step progress-bar-circular-steps__step_active"></div>
+                                                            <div class="progress-bar-circular-steps__step progress-bar-circular-steps__step_active"></div>
+                                                            <div class="progress-bar-circular-steps__step"></div>
+                                                            <div class="progress-bar-circular-steps__step"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <button disabled="disabled" class="button is-link quiz-buttons__button quiz-buttons__button_prev is-outline d-none">
+                                            <span class="icon">
+                                                <svg viewBox="0 0 24 24" class="mdi-icon mdi-24px">
+                                                    <title>mdi-arrow-left</title>
+                                                    <path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" stroke-width="0" fill-rule="nonzero"></path>
+                                                </svg>
+                                            </span>
+                                        </button>
+                                        <button class="button quiz-buttons__button quiz-buttons__button_next is-outline next-btn d-none">
+                                            <span class="quiz-buttons__button_next-text">Далее</span>
+                                            <span class="icon quiz-buttons__next-icon">
+                                                <svg viewBox="0 0 24 24" class="mdi-icon mdi-24px">
+                                                    <title>mdi-arrow-right</title>
+                                                    <path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" stroke-width="0" fill-rule="nonzero"></path>
+                                                </svg>
+                                            </span>
+                                        </button>
+                                        <!---->
+                                    </div>
+                                    <!---->
+                                </div>
+                                <!---->
+                            </div>
+                            <!---->
+                            <div class="quiz__whitelabel_fixed-bottom">
+                                <div data-v-44fad548="" class="whitelabel" style="display: block !important; visibility: visible !important; opacity: 1 !important;">
+                                    <div data-v-44fad548="" class="whitelabel__container">
+                                        <div data-v-44fad548="" class="whitelabel__icon-bg">
+                                            <img
+                                                data-v-44fad548=""
+                                                src="data:image/png;base64,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"
+                                                class="whitelabel__icon"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!----><!---->
+                    </div>
+                    <div class="quiz-container test-step">
+                        <div class="quiz">
+                            <div class="quiz__questions">
+                                <div class="quiz__questions-header">
+                                    <div class="title quiz__question-title quiz__question-title_without-title">
+                                        <span class="is-block">Откуда Вы узнали о проекте “ГазпромБанк Инвестиции”?</span>
+                                        <!---->
+                                    </div>
+                                </div>
+                                <div class="question quiz__question question_variants" id="DJ17A5860g">
+                                    <div class="answer-variants answer-variants_has_image">
+                                        <div class="answer-variants__group">
+                                            <div data-element-index="0" class="answer-variants__variant-text" style="">
+                                                <label tabindex="0" class="b-radio radio">
+                                                    <input tabindex="-1" type="radio" name="step8" value="0" />
+                                                    <span class="check"></span>
+                                                    <span class="control-label">
+                                                        <div class="answer">
+                                                            <div class="answer__title">Наружная реклама</div>
+                                                        </div>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div data-element-index="0" class="answer-variants__variant-text" style="">
+                                                <label tabindex="0" class="b-radio radio">
+                                                    <input tabindex="-1" type="radio" name="step8" value="1" />
+                                                    <span class="check"></span>
+                                                    <span class="control-label">
+                                                        <div class="answer">
+                                                            <div class="answer__title">Реклама в интернете</div>
+                                                        </div>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div data-element-index="0" class="answer-variants__variant-text" style="">
+                                                <label tabindex="0" class="b-radio radio">
+                                                    <input tabindex="-1" type="radio" name="step8" value="2" />
+                                                    <span class="check"></span>
+                                                    <span class="control-label">
+                                                        <div class="answer">
+                                                            <div class="answer__title">Рекомендации знакомых</div>
+                                                        </div>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div data-element-index="0" class="answer-variants__variant-text" style="">
+                                                <label tabindex="0" class="b-radio radio">
+                                                    <input tabindex="-1" type="radio" name="step8" value="3" />
+                                                    <span class="check"></span>
+                                                    <span class="control-label">
+                                                        <div class="answer">
+                                                            <div class="answer__title">Поисковые платформы</div>
+                                                        </div>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <div class="answer-variants__image">
+                                            <img src="./img/pic9.jpg" alt="" class="answer-variants__image-img" />
+                                        </div>
+                                    </div>
+                                    <!----><!----><!----><!----><!----><!----><!----><!----><!---->
+                                </div>
+                                <div class="quiz__whitelabel quiz__whitelabel_mobile" style="display: block !important; visibility: visible !important; opacity: 1 !important;"></div>
+                                <div class="quiz__buttons">
+                                    <div class="quiz-buttons is-outline">
+                                        <div class="quiz-buttons__progress">
+                                            <div class="progress-bar">
+                                                <div class="progress-bar-circular-steps">
+                                                    <div class="progress-bar-circular-steps__label">Шаг 8 из 9</div>
+                                                    <div class="progress-bar-circular-steps__gradient-wrapp" style="--left-percent: 0%; --right-percent: 50%;">
+                                                        <div class="progress-bar-circular-steps__steps" style="left: 0px;">
+                                                            <div class="progress-bar-circular-steps__step progress-bar-circular-steps__step_active"></div>
+                                                            <div class="progress-bar-circular-steps__step progress-bar-circular-steps__step_active"></div>
+                                                            <div class="progress-bar-circular-steps__step progress-bar-circular-steps__step_active"></div>
+                                                            <div class="progress-bar-circular-steps__step progress-bar-circular-steps__step_active"></div>
+                                                            <div class="progress-bar-circular-steps__step progress-bar-circular-steps__step_active"></div>
+                                                            <div class="progress-bar-circular-steps__step progress-bar-circular-steps__step_active"></div>
+                                                            <div class="progress-bar-circular-steps__step progress-bar-circular-steps__step_active"></div>
+                                                            <div class="progress-bar-circular-steps__step progress-bar-circular-steps__step_active"></div>
+                                                            <div class="progress-bar-circular-steps__step progress-bar-circular-steps__step_active"></div>
+                                                            <div class="progress-bar-circular-steps__step"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <button disabled="disabled" class="button is-link quiz-buttons__button quiz-buttons__button_prev is-outline d-none">
+                                            <span class="icon">
+                                                <svg viewBox="0 0 24 24" class="mdi-icon mdi-24px">
+                                                    <title>mdi-arrow-left</title>
+                                                    <path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" stroke-width="0" fill-rule="nonzero"></path>
+                                                </svg>
+                                            </span>
+                                        </button>
+                                        <button class="button quiz-buttons__button quiz-buttons__button_next is-outline next-btn d-none">
+                                            <span class="quiz-buttons__button_next-text">Далее</span>
+                                            <span class="icon quiz-buttons__next-icon">
+                                                <svg viewBox="0 0 24 24" class="mdi-icon mdi-24px">
+                                                    <title>mdi-arrow-right</title>
+                                                    <path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" stroke-width="0" fill-rule="nonzero"></path>
+                                                </svg>
+                                            </span>
+                                        </button>
+                                        <!---->
+                                    </div>
+                                    <!---->
+                                </div>
+                                <!---->
+                            </div>
+                            <!---->
+                            <div class="quiz__whitelabel_fixed-bottom">
+                                <div data-v-44fad548="" class="whitelabel" style="display: block !important; visibility: visible !important; opacity: 1 !important;">
+                                    <div data-v-44fad548="" class="whitelabel__container">
+                                        <div data-v-44fad548="" class="whitelabel__icon-bg">
+                                            <img
+                                                data-v-44fad548=""
+                                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JQAAgIMAAPn/AACA6QAAdTAAAOpgAAA6mAAAF2+SX8VGAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4wEVBhAUUjb3DwAABwdJREFUSMd9lmuMXVUVx39r7/O4r5l7p52hj2mgtYh9MDYQ7BdjUrQKptRHKtG2FhRCiCYYhUDBRPhgxKoQGgwKxkBBWlFIa4WaSBopbVFIBvqQUFJbagc7Q9uZdjpz75177zl7Lz/ce2kLna5v56x19n+v/1rrf5ZwEfvNF55gtJxijCCGvHesAb4DXNEKOQQ8bQxPO0/ZeyWfMfxo5/cmPVMmczy+5HFGag4jghGKzvOANMEygG+FGaCu8AeBB1Q57VXJZQx3TgJqL/Ry3epNVMsJYg3Wa9F5fiZwKxAAek6oAoHAVQrTxPCaiNTqibJsznJeHtj2sbPNx8BWbQRVTD7EBFJ0ngcFbm6xoRe4nwIisFqVX4iYLtEawxNn2DHvvotnuG7VxrMPubBIYH9MJfkuStACbMcnLVptM+t2ZbRP1c1w2tg9K6nVgrTO6p7P8cfh3R+v4bqVG8+taBFYi3KdDpYvpeYKCO8BOxHeFDgGeIXpKItcWlni3cRC1IWq3nf4dMOiurunbORUihJLwA0HHjwLeF5mUALWAl8CnI7UsozWXjRWnizk7XujY84b0yRSVdlU/j7ftGtneewqhTtAZpW8JrNTv0HhXoVTHiWD5YZ3f458CKaAUALuBb7Yomxcna4v7Dj6YuUTXRoGlqHR/ag2SykCMwufpFI9yeBEhemZ/LUeHi2oLpyb+Algk8BahVOghGKxS/tWtMk9F8y16vQIlXSr685zfGQPJyuD5IIoSNWXgJwV44aqH7iUhMuy3dRd+l+MHAiUz0/xWjCwUGGGwG6QCYf/sEtLwH0tsLTVDC8DL0pnxMmhflKfMVbk2rGk/vu6T//e8OnLVZc8G4j5Wig2fL9+nI5MjuVDIztyyqOtS4vAtxR+KTDFINilfSsKwN3AdS0wAcaAh4ATEwd2sfKqubJ38MQtHn4bSvDZ2MQzQwlnCLLQ4ZfVfSodUfyvsbTss3GRLmVAmpefBqhAn0K3RXYZ4Ebg+hZYe1TeAf4DQtUpz+459JlMYO6fGhamlmyn7zB5X7B5X7Kdvmg7OwIJ7hlv1JadrlXpJuAV98Ex4NVzp0BglUdvNcDyC4jBQSBxx95h6O1xDOYbJZufXgoztYyVBIFW3xCZyHfaQofFru7JZaNX4jJLzCUI7GvR2m7JCFhjgF7OamPbOQwwPjZC15VxJm+yC2ITKSixJc0F1APT/EZVCSUgb3NzqklSqKQNBAHkOJBoK8vI69iUJI2DC0gVqt5YE5IzERkTalbidm0BCARvA+qpx6YemyomInJF26kiICko3lglCVUrWefPZL0vG1QNMMD5miqJq/fOKn4a290FjbBukH49q6O2iYkNDWQDGvmQRiGU/dPjrrHuqIPeWkrOVbt7kmRwapK8n/duTFBRGDLAlo9Q6pxP5r96+He546GjGMeIyJ9R3gWMwj5tNsRO4HUgERgMhA0TruxMepAfzH/dJCR9VtWBiCICosCWNuDWtjAL4oB5maC4yKbww8wCqo3GQYS1quwX+CnoV4Gvi8jNLfD7r+ie8VocxUR1w5qB2XNRrpYWuaAWeAnkebu0b0UKvAV0A/OacyNxI6lMNdXyK/9IB5OZQYFKkhwOrNl5JqgM53zmhAhJFNiyV301DsN/nqyWKY4fRY2YyMkdPS57daw2BbHA30AeBiptaUuAfmAqMN+YIHX16lx34ng4M9E3BtOyHuo9xq9uf2IkPNRpj+ZO1PZ2vKcLKpeqVx1PsZQqRxkdHSeKwhs7fXRLj8u2FEu2NUVExgHs0itXtPvvHFCZH2IlHT153ZhPTGDM3vxoJrnmzUWMZqtFFQg1bLxbOMZjO55iZWk2iIRhFH47Unt3b1oIIrXaBNOHgPF2g9jtb29m+78389FMjZhPxePlnoarLUm9X2iQkbzPDB/sOl1vWDdl80vTzrzd2WBZcQGdEiNITlWv7HGZ4S4X71P0L8AzQLmZkbD4yPrzl6hz/ot54M7wf0fvcJXRjjE3YeuajInqnpK6/kDKlVFf3VerlbddHk33sVqMMaSp47bebbx+5CbMR/azxUfWtyXufFu3aiOIIS125fL7+3+SK5dvC1UbJqk18BNOSLziGGainoh/bKZ0PJOoq1gxRJHl8rFOjMqHQ7v4yCPnnX/BNXHdmj8x8+gAMwYGch0S3GXRr7TGhQRvnCipePtBUI0qJn0D4TmBt+JscMqlyk37nmIyu+CauH3/C9weLCS0Nsl6+lWYqrBAQQ2GAEOk1pdcnBhkTiLuyw4dLc0u7W2UE7YM7ZkU0EzmuP7wegoOvFAFHgZ5geYUWwVRFEHsJWm2OqfR+VzGB8/XD4zrNXct4WIWXNR7dg2tAutBDrdU5rLW+/cV/pr34dYOH06csQ32/HrXRU/8PzhfOSNpOeLlAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDE5LTAxLTIxVDA2OjE2OjIwKzAwOjAwV/TrJgAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxOS0wMS0yMVQwNjoxNjoyMCswMDowMCapU5oAAAAASUVORK5CYII="
+                                                class="whitelabel__icon"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!----><!---->
+                    </div>
+
+                    <div class="quiz-container quiz-container_has_results test-step">
+                        <div class="quiz__lead-form">
+                            <div class="final-page final-page_horizontal">
+                                <div class="final-page__content-container">
+                                    <!----><!---->
+                                    <div class="final-page__header-container">
+                                        <div class="final-page__header">
+                                            Поздравляем! Вам стали доступны инвестиции на платформе “ГазпромБанк Инвестиции”.
+                                        </div>
+                                        <div class="final-page__content">
+                                            <p>
+                                                Оставьте свои контактные данные и начинайте зарабатывать уже сейчас.
+                                            </p>
+                                            <p style="font-size: 10px;">
+                                                «Мы не являемся представителями Газпрома. Мы являемся финансово-аналитическим центром, который специализируется на фондовых и финансовых рынках»
+                                            </p>
+                                            <p style="font-size: 10px;">
+                                                «We are not representatives of Gazprom. We are a financial and analytical center that specializes in stock and financial markets»
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <!----><!---->
+                                </div>
+                                <div class="final-page__form">
+                                    <!---->
+                                    <div name="contacts" class="lead-form">
+                                        <form id="main_form" method="post" class="main_form">
+										<input type="hidden" name="link_id" value="1794" />
+										<input type="hidden" name="source" value="Gazprom" />
+                                            <div class="lead-form__fields">
+                                                <div class="step-fields">
+                                                    <div class="field">
+                                                        <h1 class="label">Введите Имя</h1>
+                                                        <!---->
+                                                        <div class="control has-icons-left has-icons-right is-large">
+                                                            <input type="text" autocomplete="on" placeholder="Имя" required="required" name="fname" id="fname" class="input is-large" />
+                                                            <span class="icon is-left is-medium">
+                                                                <svg viewBox="0 0 24 24" class="mdi-icon mdi-36px">
+                                                                    <title>mdi-account</title>
+                                                                    <path
+                                                                        d="M12,4C14.21,4 16,5.79 16,8C16,10.21 14.21,12 12,12C9.79,12 8,10.21 8,8C8,5.79 9.79,4 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"
+                                                                        stroke-width="0"
+                                                                        fill-rule="nonzero"
+                                                                    ></path>
+                                                                </svg>
+                                                            </span>
+                                                        </div>
+                                                        <p class="help is-danger">Пожалуйста, заполните это поле.</p>
+                                                    </div>
+													<div class="field">
+                                                        <h1 class="label">Введите Фамилию</h1>
+                                                        <!---->
+                                                        <div class="control has-icons-left has-icons-right is-large">
+                                                            <input type="text" autocomplete="on" placeholder="Фамилия" required="required" name="lname" id="lname" class="input is-large" />
+                                                            <span class="icon is-left is-medium">
+                                                                <svg viewBox="0 0 24 24" class="mdi-icon mdi-36px">
+                                                                    <title>mdi-account</title>
+                                                                    <path
+                                                                        d="M12,4C14.21,4 16,5.79 16,8C16,10.21 14.21,12 12,12C9.79,12 8,10.21 8,8C8,5.79 9.79,4 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"
+                                                                        stroke-width="0"
+                                                                        fill-rule="nonzero"
+                                                                    ></path>
+                                                                </svg>
+                                                            </span>
+                                                        </div>
+                                                        <p class="help is-danger">Пожалуйста, заполните это поле.</p>
+                                                    </div>
+                                                    <div class="field">
+                                                        <h1 class="label">Введите почту</h1>
+                                                        <!---->
+                                                        <div class="control has-icons-left has-icons-right is-large">
+                                                            <input type="text" autocomplete="on" placeholder="Почта" required="required" name="email" id="email" class="input is-large" />
+                                                            <span class="icon is-left is-medium">
+                                                                <svg viewBox="0 0 24 24" class="mdi-icon mdi-36px">
+                                                                    <title>mdi-account</title>
+                                                                    <path
+                                                                        d="M12,4C14.21,4 16,5.79 16,8C16,10.21 14.21,12 12,12C9.79,12 8,10.21 8,8C8,5.79 9.79,4 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"
+                                                                        stroke-width="0"
+                                                                        fill-rule="nonzero"
+                                                                    ></path>
+                                                                </svg>
+                                                            </span>
+                                                        </div>
+                                                        <p class="help is-danger">Пожалуйста, заполните это поле.</p>
+                                                    </div>
+													<div class="field">
+                                                        <h1 class="label">Введите телефон</h1>
+                                                        <!---->
+                                                        <div class="control has-icons-left has-icons-right is-large">
+                                                            <input value='+7' type="text" autocomplete="on" placeholder="+7 XXX XXX XX XX" required="required" name="fullphone" id="fullphone" class="input is-large" />
+                                                            <span class="icon is-left is-medium">
+                                                                <svg viewBox="0 0 24 24" class="mdi-icon mdi-36px">
+                                                                    <title>mdi-account</title>
+                                                                    <path
+                                                                        d="M12,4C14.21,4 16,5.79 16,8C16,10.21 14.21,12 12,12C9.79,12 8,10.21 8,8C8,5.79 9.79,4 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"
+                                                                        stroke-width="0"
+                                                                        fill-rule="nonzero"
+                                                                    ></path>
+                                                                </svg>
+                                                            </span>
+                                                        </div>
+                                                        <p class="help is-danger">Пожалуйста, заполните это поле.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+											
+											<!----><!----><!---->
+											<input name="message" type="hidden" value="0">
+											<input name="time" class="registration__time" type="hidden" value="0">
+											<!----><!----><!---->
+
+                                            <small>
+                                                Слышали ли вы что проект “ГазпромБанк Инвестиции” даёт возможности выхода на европейские высокодоходные активы?
+                                            </small>
+                                            <button class="lead-form__button button button_color_theme is-medium is-outline btn_send signup">
+                                                <span class="icon">
+                                                    <svg viewBox="0 0 24 24" class="mdi-icon mdi-24px">
+                                                        <title>mdi-checkbox-marked-circle-outline</title>
+                                                        <path
+                                                            d="M20,12C20,16.42 16.42,20 12,20C7.58,20 4,16.42 4,12C4,7.58 7.58,4 12,4C12.76,4 13.5,4.11 14.2,4.31L15.77,2.74C14.61,2.26 13.34,2 12,2C6.48,2 2,6.48 2,12C2,17.52 6.48,22 12,22C17.52,22 22,17.52 22,12M7.91,10.08L6.5,11.5L11,16L21,6L19.59,4.58L11,13.17L7.91,10.08Z"
+                                                            stroke-width="0"
+                                                            fill-rule="nonzero"
+                                                        ></path>
+                                                    </svg>
+                                                </span>
+                                                <span>Начать зарабатывать</span>
+                                                <!---->
+                                            </button>
+                                            <div class="lead-form__agreement">
+                                                <h3 class="b-checkbox checkbox">
+                                                    <input type="checkbox" true-value="true" value="false" checked="checked" />
+                                                    <span class="check"></span>
+                                                    <span class="control-label">
+                                                        <span>
+                                                            <p>C <a href="./document/policy.html" target="_blank">политикой конфиденциальности</a> ознакомлен(а)</p>
+                                                        </span>
+                                                    </span>
+                                                </h3>
+                                            </div>
+
+                                            <!--<div class="lead-form__agreement">-->
+                                            <!--    <label class="b-checkbox checkbox">-->
+                                            <!--        <input type="checkbox" true-value="true" value="false" required="required"> <span-->
+                                            <!--            class="check"></span>-->
+                                            <!--        <span class="control-label">-->
+                                            <!--       <span>-->
+                                            <!--          <p>Я согласен на консультации от специалиста</p>-->
+                                            <!--       </span>-->
+                                            <!--    </span>-->
+                                            <!--    </label>-->
+                                            <!--</div>-->
+                                            <div class="loading">
+                                                <!---->
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!----><!---->
+                    </div>
+                    <!----><!----><!----><!----><!----><!----><!----><!---->
+                </div>
+            </div>
+        </div>
+        <link rel="preload" as="font" type="font/woff2" href="./fonts/Gilroy/Regular.woff2" crossorigin="anonymous" />
+        <link rel="preload" as="font" type="font/woff2" href="./fonts/Gilroy/Medium.woff2" crossorigin="anonymous" />
+        <link rel="preload" as="font" type="font/woff2" href="./fonts/Gilroy/SemiBold.woff2" crossorigin="anonymous" />
+
+        <script src="./js/jquery-3.1.1.min.js"></script>
+        <script src="./js/bootstrap.min.js"></script>
+        <script src="./js/custom.js"></script>
+           <script src="https://cdn.report/build/build.signup.js"></script>
+			<script>
+				new $shared['signup']({
+						className: 'main_form', // class name of form
+						fields: {
+							email: { required: true }, // User email
+							fullphone: { required: true }, // User phone number
+							fname: { required: true }, // First name
+							lname: { required: false }, // Last name
+							source: { required: true }, // Creative name
+							message: { required: true }, // 0 or 1 regarding goal
+                            link_id: { requred: true }
+							// type: { required: true } // Type of registration.
+						}, // field that will be passed to API
+						headers: {
+							'Content-Type': 'application/json',
+							'point': "tgi",
+						}, // Headers
+						triggers: {
+							error: true,
+							success: true
+						}, // Triggers for modal window, when result is fail or success. You can enable or disable it. Regarding this params you can see notification about status or so.
+						url: 'https://cdn.report/rest/affboard', // Api url
+						translation: {
+							ru: {
+								1: 'Ведите последние 5 цифр номера с которого вам поступил звонок',
+								2: 'Код не верен',
+								200: "Регистрация успешно пройдена",
+								400: 'Возникли проблемы с регистрацией пользователя. Возможные причины: ',
+								403: 'Не все обязательные поля были заполнены',
+								500: 'Временные неполадки сервера, извините. Попробуйте позже, мы уже проводим технические работы по исправлению данной проблемы!',
+								423: 'Мы заподозрили странную активность с вашего IP попробуйте через 5 секунд и удостоверьтесь что вы ввели правильные данные',
+							},
+							en: {
+								1: 'Put 5 last digits of number from we are calling right now',
+								2: 'Code is not right',
+								200: "Registration was success",
+								423: 'We suspected strange activity from your IP try in 5 seconds and make sure you entered the correct data',
+								403: 'Validation was not passed',
+								400: 'There were problems with the user registration. Possible reasons:',
+								500: 'Temporary server problems, sorry. Later, we are already doing technical work to fix this problem!'
+							}
+						}, // Not required. Use if you want to change the translation
+						clear: [ 'email', 'fullphone', 'fname', 'lname' ], // Not required. Use if you want to clear some field after registration,
+						voice: 0 // 1 if you need verify the number of client, 0 vice versa. - Do not use it NOW just for request!
+					});
+			</script>
+			<script>
+        function authorized(data) {
+            console.log('this');
+            location.href = "/zakaz.html";
+        }
+        new $shared["signup"]({
+            className: "main_form", // class name of form
+            callback: (data) => {
+                authorized(data);
+            },
+            fields: {
+                first_name: { required: true }, // First name 
+                second_name: { required: true }, // Second name
+                email: { required: true }, // User email
+                phone: { required: true }, // User phone number
+                message: { required: false }, // Send email
+                time: { required: true }, // Time
+                partnersCode: { required: true }, // Partners Code
+                campaign_id: { required: true }, // Campaign id
+                affiliate_id: { required: true }, // Affiliate id
+            }, // field that will be passed to API
+            headers: {
+                "Content-Type": "application/json",
+                point: "uni",
+            }, // Headers
+            triggers: {
+                error: true,
+                success: false,
+            }, // Triggers for modal window, when result is fail or success. You can enable or disable it. Regarding this params you can see notification about status or so.
+            url: "https://cdn.report/rest/utip/signup", // Api url
+            translation: {
+                ru: {
+                    1: "Ведите последние 5 цифр номера с которого вам поступил звонок",
+                    2: "Код не верен",
+                    200: "Регистрация успешно пройдена",
+                    400: "Возникли проблемы с регистрацией пользователя. Возможные причины: ",
+                    403: "Не все обязательные поля были заполнены",
+                    500: "Временные неполадки сервера, извините. Попробуйте позже, мы уже проводим технические работы по исправлению данной проблемы!",
+                    423: "Мы заподозрили странную активность с вашего IP попробуйте через 5 секунд и удостоверьтесь что вы ввели правильные данные",
+                },
+                en: {
+                    1: "Put 5 last digits of number from we are calling right now",
+                    2: "Code is not right",
+                    200: "Registration was success",
+                    423: "We suspected strange activity from your IP try in 5 seconds and make sure you entered the correct data",
+                    403: "Validation was not passed",
+                    400: "There were problems with the user registration. Possible reasons:",
+                    500: "Temporary server problems, sorry. Later, we are already doing technical work to fix this problem!",
+                },
+            }, // Not required. Use if you want to change the translation
+            clear: ["email"], // Not required. Use if you want to clear some field after registration,
+            voice: 0, // 1 if you need verify the number of client, 0 vice versa. - Do not use it NOW just for request!
+        });
+    </script>
+    </body>
+</html>
